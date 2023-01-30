@@ -32,6 +32,9 @@ const TableHead = ({
 							}
 						>
 							{label}
+							{sortable && key === sortField && (
+								<span>{order === "asc" ? "▲" : "▼"}</span>
+							)}
 						</th>
 					);
 				})}

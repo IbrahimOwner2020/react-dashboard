@@ -9,7 +9,7 @@ const getData = () => {
 		.then((data) => {
 			return data.products.map((el: any) => {
 				return {
-                    id: el.id,
+					id: el.id,
 					title: el.title,
 					brand: el.brand,
 					category: el.category,
@@ -27,45 +27,45 @@ const Table = () => {
 		getData().then((data) => setData(data));
 	});
 
-    const handleSorting = (key: string, order: string) => {
-        const sortedData = [...data!];
-        sortedData.sort((a, b) => {
-            if (a[key as keyof typeof a] > b[key as keyof typeof b]) {
-                return order === "asc" ? 1 : -1;
-            }
-            if (a[key as keyof typeof a] < b[key as keyof typeof b]) {
-                return order === "asc" ? -1 : 1;
-            }
-            return 0;
-        });
-        setData(sortedData);
-    }
+	const handleSorting = (key: string, order: string) => {
+		const sortedData = [...data!];
+		sortedData.sort((a, b) => {
+			if (a[key as keyof typeof a] > b[key as keyof typeof b]) {
+				return order === "asc" ? 1 : -1;
+			}
+			if (a[key as keyof typeof a] < b[key as keyof typeof b]) {
+				return order === "asc" ? -1 : 1;
+			}
+			return 0;
+		});
+		setData(sortedData);
+	};
 
 	const columns = [
 		{
 			label: "Title",
 			key: "title",
-            sortable: true
+			sortable: true,
 		},
 		{
 			label: "Brand",
 			key: "brand",
-            sortable: true
+			sortable: true,
 		},
 		{
 			label: "Category",
 			key: "category",
-            sortable: true
+			sortable: true,
 		},
 		{
 			label: "Price",
 			key: "price",
-            sortable: true
+			sortable: true,
 		},
 		{
 			label: "Ratings",
 			key: "ratings",
-            sortable: true
+			sortable: true,
 		},
 	];
 
